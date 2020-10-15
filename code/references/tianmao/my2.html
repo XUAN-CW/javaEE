@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>天猫首页</title>
+
+    <style>
+        /*共有部分*/
+        body, ul, li, input, p {
+            margin: 0px;
+            padding: 0px;
+            list-style: none;
+            font: 12px/1.5 tahoma, arial, "宋体";
+        }
+
+        h5 {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #b0b0b0;
+        }
+
+        img {
+            border: none;
+        }
+
+        /*顶部导航*/
+        .topnavbox {
+            width: 100%;
+            height: 32px;
+            border-bottom: 1px solid #e5e5e5;
+            background: #f2f2f2;
+        }
+
+        .topnavleft {
+            height: 32px;
+            float: left;
+            margin-left: 20px;
+        }
+
+        .topnavright {
+            height: 32px;
+            float: right;
+            margin-right: 20px;
+        }
+
+        .topNavLi {
+            height: 32px;
+            line-height: 31px;
+            float: left;
+            color: #b0b0b0;
+            margin-left: 15px;
+            position: relative;
+        }
+
+        .topnavimg {
+            vertical-align: middle;
+        }
+
+
+        /*搜索部分*/
+        .part2 {
+            width: 100%;
+            height: 113px;
+        }
+
+        .con-hedaleft {
+            width: 400px;
+            height: 85px;
+            float: left;
+
+        }
+
+        .dropDownBox {
+            float: right;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .con-hedaright {
+            width: 1000px;
+            height: 63px;
+            padding: 11px 0px 11px;
+            float: right;
+            display: flex;
+            justify-content: right;
+        }
+
+        .searchBox {
+            width: auto;
+            height: auto;
+            float: right;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .searchInputField {
+            width: 400px;
+            height: 34px;
+            padding-left: 3px;
+            border: 3px solid #c40000;
+            color: #666;
+            font-size: 14px;
+            float: left;
+            line-height: 34px;
+        }
+
+        .searchButton {
+            display: block;
+            width: 50px;
+            height: 40px;
+            background: #c40000;
+            float: right;
+            color: #fff;
+            font-size: 16px;
+            text-align: center;
+            line-height: 40px;
+        }
+
+        .server {
+            float: right;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+
+        .serverContent {
+            float: right;
+        }
+    </style>
+</head>
+<body>
+<!-- 顶部导航 -->
+<div class="topnavbox">
+    <div class="topnavleft">
+        <ul>
+            <li class="topNavLi">
+                <img class="topnavimg" src="imgs/topnav1.png" alt="">
+                <a href="#">天猫首页</a>
+            </li>
+            <li class="topNavLi">
+                喵，欢迎来到天猫
+            </li>
+            <li class="topNavLi">
+                <a href="#">请登录</a>
+            </li>
+            <li class="topNavLi">
+                <a href="#">免费注册</a>
+            </li>
+        </ul>
+    </div>
+    <div class="topnavright">
+        <ul>
+            <li class="topNavLi">
+                <img class="topnavimg" src="imgs/topnav2.png">
+                <a href="#">天猫宝</a>
+            </li>
+            <li class="topNavLi">
+                <a href="#">我的淘宝</a>
+                <img class="topnavimg" src="imgs/jiantou.png">
+
+            </li>
+            <li class="topNavLi">
+                <img class="topnavimg" src="imgs/topnav3.png">
+                <a href="#">我关注的品牌</a>
+            </li>
+            <li class="topNavLi">
+                <img class="topnavimg" src="imgs/topnav4.png">
+                <a href="#">购物车0件</a>
+            </li>
+            <li class="topNavLi">
+                &nbsp&nbsp<a href="#">收藏夹</a>
+                <img class="topnavimg" src="imgs/jiantou.png">
+
+            </li>
+            <li class="topNavLi">丨</li>
+            <li class="topNavLi">
+                <img class="topnavimg" src="imgs/topnav5.png">
+                <a href="#">手机版</a>
+
+            </li>
+            <li class="topNavLi">
+                <a href="#">淘宝网</a>
+            </li>
+            <li class="topNavLi">
+                <a href="#">商家支持</a>
+                <img class="topnavimg" src="imgs/jiantou.png">
+            </li>
+            <li class="topNavLi">
+                <img class="topnavimg" src="imgs/topnav6.png">
+                <a href="#">网站导航</a>
+                <img class="topnavimg" src="imgs/jiantou.png">
+            </li>
+        </ul>
+    </div>
+</div>
+
+
+<!-- 头部logo+搜索 -->
+<div class="part2">
+    <div class="con-hedaleft">
+        <img src="imgs/logo.gif">
+        <div class="dropDownBox">
+            <select>
+                <option value="volvo">更多</option>
+                <option value="saab">1111</option>
+                <option value="opel">2222</option>
+                <option value="audi">3333</option>
+            </select>
+        </div>
+    </div>
+    <div class="con-hedaright">
+        <div class="searchBox">
+            <input class="searchInputField" type="text" value="猫猫狗狗购物狂欢，给它最好的">
+            <a href="#" class="searchButton">
+                搜 索
+            </a>
+        </div>
+        <div class="server">
+            <div class="server">
+                <img src="imgs/logo6.png" alt="">
+                <div class="serverContent">
+                    品质保障
+                </div>
+            </div>
+            <div class="server">
+                <img src="imgs/logo7.png" alt="">
+                <div class="serverContent">
+                    售后无忧
+                </div>
+            </div>
+            <div class="server">
+                <img src="imgs/logo8.png" alt="">
+                <div class="serverContent">
+                    七天退换
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
