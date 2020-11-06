@@ -1,0 +1,7 @@
+.idea/
+*.xml
+*.cmd
+*.jpg
+*.md
+spring-boot-jpa-demo-master/mvnw
+*.jar
