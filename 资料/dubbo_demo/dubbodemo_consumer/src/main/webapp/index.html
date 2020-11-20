@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>天猫首页</title>
+    <script src="https://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+    <style>
+        /*共有部分*/
+        body, ul, li, input, p {
+            margin: 0px;
+            padding: 0px;
+            list-style: none;
+            font: 12px/1.5 tahoma, arial, "宋体";
+        }
+
+        h5 {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #b0b0b0;
+        }
+
+        img {
+            border: none;
+        }
+
+        /*顶部导航*/
+        .topnavbox {
+            width: 100%;
+            height: 32px;
+            border-bottom: 1px solid #e5e5e5;
+            background: #f2f2f2;
+        }
+
+        .topnavleft {
+            height: 32px;
+            float: left;
+            margin-left: 20px;
+        }
+
+        .topnavright {
+            height: 32px;
+            float: right;
+            margin-right: 20px;
+        }
+
+        .topNavLi {
+            height: 32px;
+            line-height: 31px;
+            float: left;
+            color: #b0b0b0;
+            margin-left: 15px;
+            position: relative;
+        }
+
+        .topnavimg {
+            vertical-align: middle;
+        }
+
+
+        /*搜索部分*/
+        .part2 {
+            width: 100%;
+            background-color: white;
+            display: flex;
+            align-items: center;
+        }
+
+        .con-hedaleft {
+            width: 400px;
+            float: left;
+            display: flex;
+            align-items: center;
+            padding-left: 40px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+
+        .dropDownBox {
+            float: right;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding-left: 10px;
+        }
+
+        .con-hedaright {
+            width: 1000px;
+            float: right;
+            display: flex;
+            justify-content: right;
+        }
+
+        .searchBox {
+            width: auto;
+            height: auto;
+            float: right;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .searchInputField {
+            width: 400px;
+            height: 34px;
+            padding-left: 3px;
+            border: 3px solid #c40000;
+            color: #666;
+            font-size: 14px;
+            float: left;
+            line-height: 34px;
+        }
+
+        .searchButton {
+            display: block;
+            width: 50px;
+            height: 40px;
+            background: #c40000;
+            float: right;
+            color: #fff;
+            font-size: 16px;
+            text-align: center;
+            line-height: 40px;
+        }
+
+        .server {
+            float: right;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+
+        .serverContent {
+            float: right;
+        }
+
+
+        /*/////////////////////////////////*/
+        .part3 {
+            width: 100%;
+            height: 100%;
+            margin: 0 auto;
+            padding: 10px;
+            background-color: whitesmoke;
+            display: flex;
+            justify-content: center;
+        }
+
+        .bannerleft {
+            width: 300px;
+            height: 480px;
+            float: left;
+            background-color: #666666;
+        }
+
+        .bannerRight {
+            height: max-content;
+        }
+
+        .bannerleft ul li {
+            height: 30px;
+        }
+
+        .menu {
+            display: block;
+            padding-left: 18px;
+            font-size: 14px;
+            line-height: 30px;
+            color: #fff;
+            font-family: "Microsoft YaHei", tahoma, arial, "Hiragino Sans GB", "宋体", sans-serif;
+            height: 30px;
+        }
+
+        .menu a {
+            color: #fff;
+        }
+
+        .menu a:hover {
+            text-decoration: underline;
+        }
+
+        .menu img {
+            vertical-align: middle;
+        }
+
+
+        #ClassificationOfGoodsAndServices {
+            background-color: #c40000;
+        }
+
+
+        .fourGoodsDiv {
+            width: -moz-fit-content;
+            height: 480px;
+            float: left;
+            position: relative;
+        }
+
+        .fourGoodsDivLeft {
+            float: left;
+        }
+
+        .fourGoodsDivRight {
+            float: right;
+        }
+
+        .goodsCard {
+            padding-left: 10px;
+            overflow: hidden;
+        }
+
+        .goodsImg {
+            z-index: 2;
+            width: 500px;
+            height: 300px;
+        }
+
+        .divUnderImg {
+            float: bottom;
+            width: 460px;
+        }
+
+
+        .couponsImg{
+            height: 15%;
+            width: 15%;
+            float: left;
+            padding-left: 5px;
+        }
+
+
+        .goodsIntroduction {
+            float: right;
+            margin-right: 10px;
+        }
+
+        .goodsIntroductionInBigFont {
+            text-align: right;
+        }
+
+        .goodsIntroductionInSmallFont {
+            color: #b0b0b0;
+            text-align: right;
+            height: 40px;
+        }
+
+        .bottomImg {
+            margin: 15px;
+        }
+
+        .divUnderFourImg {
+            background-color: white;
+            padding-left: 50px;
+        }
+
+
+        #lunbobox {
+            width:500px;
+            height:300px;
+            position:relative;
+        }
+        .lunbo {
+            width:500px;
+            height:300px;
+        }
+        .lunbo img {
+            width:500px;
+            height:300px;
+            position:absolute;
+            top:0px;
+            left:0px;
+        }
+        #lunbobox ul {
+            width:285px;
+            position:absolute;
+            bottom:10px;
+            right:0px;
+            z-index:5;
+        }
+        #lunbobox ul li {
+            cursor:pointer;
+            width:10px;
+            height:4px;
+            border:1px solid #cccccc;
+            float:left;
+            list-style:none;
+            background:#cccccc;
+            text-align:center;
+            margin:0px 5px 0px 0px;
+        }
+        #toleft {
+            display:none;
+            width:30px;
+            height:100px;
+            font-size:40px;
+            line-height:100px;
+            text-align:center;
+            color:#f4f4f4;
+            /*background:#cccccc;
+            */
+            /*background:url("../images/toleft.jpg")no-repeat center;
+            */
+            position:absolute;
+            top:90px;
+            left:12px;
+            cursor:pointer;
+            z-index:99;
+            opacity:0.4;
+        }
+        #toright {
+            display:none;
+            width:30px;
+            height:100px;
+            font-size:40px;
+            line-height:100px;
+            text-align:center;
+            color:#f4f4f4;
+            /*background:#cccccc;
+            */
+            position:absolute;
+            top:90px;
+            right:0px;
+            cursor:pointer;
+            z-index:99;
+            opacity:0.4;
+        }
+    </style>
+</head>
+<body>
+<!-- 顶部导航 -->
+<div class="topnavbox">
+    <div class="topnavleft">
+        <ul>
+            <li class="topNavLi">
+                <a href="#">天猫首页</a>
+            </li>
+            <li class="topNavLi">
+                喵，欢迎来到天猫
+            </li>
+            <li class="topNavLi">
+                <a href="#">请登录</a>
+            </li>
+            <li class="topNavLi">
+                <a href="#">免费注册</a>
+            </li>
+        </ul>
+    </div>
+    <div class="topnavright">
+        <ul>
+            <li class="topNavLi">
+                <img class="topnavimg" src="imgs/logo1.png">
+                <a href="#">天猫宝</a>
+            </li>
+            <li class="topNavLi">
+                <a href="#">我的淘宝</a>
+                <img class="topnavimg" src="imgs/jiantou.png">
+
+            </li>
+            <li class="topNavLi">
+                <img class="topnavimg" src="imgs/logo2.png">
+                <a href="#">我关注的品牌</a>
+            </li>
+            <li class="topNavLi">
+                <img class="topnavimg" src="imgs/logo3.png">
+                <a href="#">购物车0件</a>
+            </li>
+            <li class="topNavLi">
+                &nbsp&nbsp<a href="#">收藏夹</a>
+                <img class="topnavimg" src="imgs/jiantou.png">
+
+            </li>
+            <li class="topNavLi">丨</li>
+            <li class="topNavLi">
+                <img class="topnavimg" src="imgs/logo4.png">
+                <a href="#">手机版</a>
+
+            </li>
+            <li class="topNavLi">
+                <a href="#">淘宝网</a>
+            </li>
+            <li class="topNavLi">
+                <a href="#">商家支持</a>
+                <img class="topnavimg" src="imgs/jiantou.png">
+            </li>
+            <li class="topNavLi">
+                <img class="topnavimg" src="imgs/logo5.png">
+                <a href="#">网站导航</a>
+                <img class="topnavimg" src="imgs/jiantou.png">
+            </li>
+        </ul>
+    </div>
+</div>
+
+
+<!-- 头部logo+搜索 -->
+<div class="part2">
+    <div class="con-hedaleft">
+        <img src="imgs/logo.png">
+        <div class="dropDownBox">
+            <select>
+                <option value="volvo">更多</option>
+                <option value="saab">1111</option>
+                <option value="opel">2222</option>
+                <option value="audi">3333</option>
+            </select>
+        </div>
+    </div>
+    <div class="con-hedaright">
+        <div class="searchBox">
+<!--            <input class="searchInputField" type="text" value="">-->
+<!--            <a href="#" class="searchButton">-->
+<!--                搜 索-->
+<!--            </a>-->
+            <form action="http://localhost:8080/user/quick2" method="get">
+                <input class="searchInputField" type="text" value="" name="username">
+                <input type="submit" value="搜 索" class="searchButton"/>
+            </form>
+        </div>
+
+        <div class="server">
+            <div class="server">
+                <img src="imgs/logo6.png" alt="">
+                <div class="serverContent">
+                    品质保障
+                </div>
+            </div>
+            <div class="server">
+                <img src="imgs/logo7.png" alt="">
+                <div class="serverContent">
+                    售后无忧
+                </div>
+            </div>
+            <div class="server">
+                <img src="imgs/logo8.png" alt="">
+                <div class="serverContent">
+                    七天退换
+                </div>
+            </div>
+        </div>
+        <form action="http://localhost:8082/hello/add.do">
+            addend1:<br>
+            <input type="text" name="addend1">
+            <br>
+            addend1:<br>
+            <input type="text" name="addend2">
+            <br><br>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</div>
+
+<div class="part3">
+    <div class="bannerleft">
+        <ul>
+            <li class="menu" id="ClassificationOfGoodsAndServices">
+                <img src="imgs/daohang1.png">
+                商品服务分类
+            </li>
+            <li class="menu">
+                <img src="imgs/daohang2.png">
+                <a href="" one-link-mark="yes">女装</a>/<a href="" one-link-mark="yes">内衣</a>
+            </li>
+            <li class="menu">
+                <img src="imgs/daohang3.png">
+                <a href="" one-link-mark="yes">男装</a>/<a href="" one-link-mark="yes">运动户外</a>
+            </li>
+            <li class="menu">
+                <img src="imgs/daohang4.png">
+                <a href="" one-link-mark="yes">女鞋</a>/<a href="" one-link-mark="yes">男鞋</a>/<a href=""
+                                                                                               one-link-mark="yes">箱包</a>
+            </li>
+            <li class="menu">
+                <img src="imgs/daohang5.png">
+                <a href="" one-link-mark="yes">化妆品</a>/<a href="" one-link-mark="yes">个人护理</a>
+            </li>
+            <li class="menu">
+                <img src="imgs/daohang6.png">
+                <a href="" one-link-mark="yes">手机</a>/<a href="" one-link-mark="yes">数码</a>/<a href=""
+                                                                                               one-link-mark="yes">电脑办公</a>
+            </li>
+            <li class="menu">
+                <img src="imgs/daohang7.png">
+                <a href="" one-link-mark="yes">母婴玩具</a>
+            </li>
+            <li class="menu">
+                <img src="imgs/daohang8.png">
+                <a href="" one-link-mark="yes">零食</a>/<a href="" one-link-mark="yes">进口食品</a>/<a href=""
+                                                                                                 one-link-mark="yes">茶酒</a>
+            </li>
+            <li class="menu">
+                <img src="imgs/daohang9.png">
+                <a href="" one-link-mark="yes">大家电</a>/<a href="" one-link-mark="yes">生活电器</a>
+            </li>
+            <li class="menu">
+                <img src="imgs/daohang10.png">
+                <a href="" one-link-mark="yes">家具建材</a>
+            </li>
+            <li class="menu">
+                <img src="imgs/daohang11.png">
+                <a href="" one-link-mark="yes">腕表</a>/<a href="" one-link-mark="yes">珠宝饰品</a>/<a href=""
+                                                                                                 one-link-mark="yes">眼镜</a>
+            </li>
+            <li class="menu">
+                <img src="imgs/daohang12.png">
+                <a href="" one-link-mark="yes">汽车</a>/<a href="" one-link-mark="yes">配件</a>/<a href=""
+                                                                                               one-link-mark="yes">用品</a>
+            </li>
+            <li class="menu">
+                <img src="imgs/daohang13.png">
+                <a href="" one-link-mark="yes">家纺</a>/<a href="" one-link-mark="yes">布艺</a>/<a href=""
+                                                                                               one-link-mark="yes">鲜花</a>
+            </li>
+            <li class="menu">
+                <img src="imgs/daohang14.png">
+                <a href="" one-link-mark="yes">医药保健</a>
+            </li>
+            <li class="menu">
+                <img src="imgs/daohang15.png">
+                <a href="" one-link-mark="yes">厨具</a>/<a href="" one-link-mark="yes">收纳</a>/<a href=""
+                                                                                               one-link-mark="yes">宠物</a>
+            </li>
+            <li class="menu">
+                <img src="imgs/daohang16.png">
+                <a href="" one-link-mark="yes">图书音像</a>
+            </li>
+        </ul>
+    </div>
+    <div class="bannerRight">
+        <div class="fourGoodsDiv">
+            <div class="fourGoodsDivLeft">
+                <div class="goodsCard">
+<!--                    <img src="imgs/good.png" class="goodsImg">-->
+
+                    <div class="middle_right">
+                        <div id="lunbobox">
+                            <div id="toleft">
+                                &lt;</div>
+                            <div class="lunbo">
+                                <a href="#"><img src="imgs/good.png"></a>
+                                <a href="#"><img src="imgs/good1.png"></a>
+                                <a href="#"><img src="imgs/good2.png"></a>
+                                <a href="#"><img src="imgs/good3.png"></a>
+                                <a href="#"><img src="imgs/good2.png"></a>
+                            </div>
+                            <div id="toright">&gt;</div>
+                            <ul>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                                <li></li>
+                            </ul>
+                            <span></span>
+                        </div>
+                    </div>
+
+                    <div class="divUnderImg">
+                        <img src="imgs/yhj.png" alt="" class="couponsImg">
+                        <div class="goodsIntroduction">
+                            <div class="goodsIntroductionInBigFont">九牧增压花酒</div>
+                            <div class="goodsIntroductionInSmallFont">超强增压特效特价促销</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="goodsCard">
+                    <img src="imgs/good1.png" class="goodsImg">
+                    <div class="divUnderImg">
+                        <div class="goodsIntroduction">
+                            <div class="goodsIntroductionInBigFont">2015天猫端午节</div>
+                            <div class="goodsIntroductionInSmallFont">鲜粽自发 买一送一</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="fourGoodsDivRight">
+                <div class="goodsCard">
+                    <img src="imgs/good2.png" class="goodsImg">
+                    <div class="divUnderImg">
+                        <div class="goodsIntroduction">
+                            <div class="goodsIntroductionInBigFont">加拿大龙虾春季首捕</div>
+                            <div class="goodsIntroductionInSmallFont">春季首捕 包机直送</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="goodsCard">
+                    <img src="imgs/good3.png" class="goodsImg">
+                    <div class="divUnderImg">
+                        <div class="goodsIntroduction">
+                            <div class="goodsIntroductionInBigFont">2015钻石狂潮</div>
+                            <div class="goodsIntroductionInSmallFont">买车厘子抽钻石</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="divUnderFourImg">
+            <img src="imgs/logo10.png" class="bottomImg">
+            <img src="imgs/logo11.png" class="bottomImg">
+            <img src="imgs/logo12.png" class="bottomImg">
+            <img src="imgs/logo13.png" class="bottomImg">
+            <img src="imgs/logo14.png" class="bottomImg">
+            <img src="imgs/logo15.png" class="bottomImg">
+        </div>
+    </div>
+</div>
+<div>
+
+    <div class="middle_right">
+        <div id="lunbobox">
+            <div id="toleft">
+                &lt;</div>
+            <div class="lunbo">
+                <a href="#"><img src="imgs/good.png"></a>
+                <a href="#"><img src="imgs/good1.png"></a>
+                <a href="#"><img src="imgs/good2.png"></a>
+                <a href="#"><img src="imgs/good3.png"></a>
+                <a href="#"><img src="imgs/good2.png"></a>
+            </div>
+            <div id="toright">&gt;</div>
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+            <span></span>
+        </div>
+    </div>
+
+
+    <script>
+        ///轮播
+        $(function() {
+            //$("#toright").hide();
+            //$("#toleft").hide();
+            $('#toright').hover(function() {
+                $("#toleft").hide()
+            }, function() {
+                $("#toleft").show()
+            })
+            $('#toleft').hover(function() {
+                $("#toright").hide()
+            }, function() {
+                $("#toright").show()
+            })
+        })
+
+        var t;
+        var index = 0;
+        /////自动播放
+        t = setInterval(play, 3000)
+
+        function play() {
+            index++;
+            if (index > 4) {
+                index = 0
+            }
+            // console.log(index)
+            $("#lunbobox ul li").eq(index).css({
+                "background": "#999",
+                "border": "1px solid #ffffff"
+            }).siblings().css({
+                "background": "#cccccc",
+                "border": ""
+            })
+
+            $(".lunbo a ").eq(index).fadeIn(1000).siblings().fadeOut(1000);
+        };
+
+        ///点击鼠标 图片切换
+        $("#lunbobox ul li").click(function() {
+
+            //添加 移除样式
+            //$(this).addClass("lito").siblings().removeClass("lito"); //给当前鼠标移动到的li增加样式 且其余兄弟元素移除样式   可以在样式中 用hover 来对li 实现
+            $(this).css({
+                "background": "#999",
+                "border": "1px solid #ffffff"
+            }).siblings().css({
+                "background": "#cccccc"
+            })
+            var index = $(this).index(); //获取索引 图片索引与按钮的索引是一一对应的
+            // console.log(index);
+
+            $(".lunbo a ").eq(index).fadeIn(1000).siblings().fadeOut(1000); // siblings  找到 兄弟节点(不包括自己）
+        });
+
+        /////////////上一张、下一张切换
+        $("#toleft").click(function() {
+            index--;
+            if (index <= 0) //判断index<0的情况为：开始点击#toright  index=0时  再点击 #toleft 为负数了 会出错
+            {
+                index = 4
+            }
+            console.log(index);
+            $("#lunbobox ul li").eq(index).css({
+                "background": "#999",
+                "border": "1px solid #ffffff"
+            }).siblings().css({
+                "background": "#cccccc"
+            })
+
+            $(".lunbo a ").eq(index).fadeIn(1000).siblings().fadeOut(1000); // siblings  找到 兄弟节点(不包括自己）必须要写
+        }); // $("#imgbox a ")获取到的是一个数组集合 。所以可以用index来控制切换
+
+        $("#toright").click(function() {
+            index++;
+            if (index > 4) {
+                index = 0
+            }
+            console.log(index);
+            $(this).css({
+                "opacity": "0.5"
+            })
+            $("#lunbobox ul li").eq(index).css({
+                "background": "#999",
+                "border": "1px solid #ffffff"
+            }).siblings().css({
+                "background": "#cccccc"
+            })
+            $(".lunbo a ").eq(index).fadeIn(1000).siblings().fadeOut(1000); // siblings  找到 兄弟节点(不包括自己）
+        });
+        $("#toleft,#toright").hover(function() {
+                $(this).css({
+                    "color": "black"
+                })
+            },
+            function() {
+                $(this).css({
+                    "opacity": "0.3",
+                    "color": ""
+                })
+            })
+        ///
+
+        ///////鼠标移进  移出
+        $("#lunbobox ul li,.lunbo a img,#toright,#toleft ").hover(
+            ////////鼠标移进
+            function() {
+                $('#toright,#toleft').show()
+                clearInterval(t);
+
+            },
+            ///////鼠标移开
+            function() {
+                //$('#toright,#toleft').hide()
+                //alert('aaa')
+                t = setInterval(play, 3000)
+
+                function play() {
+                    index++;
+                    if (index > 4) {
+                        index = 0
+                    }
+                    $("#lunbobox ul li").eq(index).css({
+                        "background": "#999",
+                        "border": "1px solid #ffffff"
+                    }).siblings().css({
+                        "background": "#cccccc"
+                    })
+                    $(".lunbo a ").eq(index).fadeIn(1000).siblings().fadeOut(1000);
+                }
+            })
+    </script>
+
+</div>
+</div>
+</div>
+
+</body>
+</html>
