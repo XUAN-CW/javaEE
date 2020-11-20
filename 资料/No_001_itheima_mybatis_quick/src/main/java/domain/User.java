@@ -1,16 +1,11 @@
 package domain;
 
-/**
- * @author XUAN
- * @date 2020/10/7 - 16:26
- * @references
- * @purpose
- * @errors
- */
 public class User {
+
     private int id;
-    private String username;
-    private String password;
+    private int remaining;
+    private int integral;
+    private String time;
 
     public int getId() {
         return id;
@@ -20,28 +15,38 @@ public class User {
         this.id = id;
     }
 
-    public String getUsername() {
-        return username;
+    public int getRemaining() {
+        return remaining;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setRemaining(int remaining) {
+        this.remaining = remaining;
     }
 
-    public String getPassword() {
-        return password;
+    public int getIntegral() {
+        return integral;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public void setIntegral(int integral) {
+        this.integral = integral;
     }
+
+    public String getTime() {
+        return time;
+    }
+
+    public void setTime(String time) {
+        this.time = time;
+    }
+
 
     @Override
     public String toString() {
         return "User{" +
                 "id=" + id +
-                ", username='" + username + '\'' +
-                ", password='" + password + '\'' +
+                ", remaining=" + remaining +
+                ", integral=" + integral +
+                ", time='" + time + '\'' +
                 '}';
     }
 }
