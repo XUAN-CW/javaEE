@@ -8,5 +8,5 @@ spring:
     database: mysql
     ### 运行时输出SQL语句
 #    show-sql: true
-server:
-  port: 8081
+#server:
+#  port: 8081
